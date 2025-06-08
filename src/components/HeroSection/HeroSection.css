@@ -1,0 +1,86 @@
+/* src/components/HeroSection/HeroSection.css */
+.hero-section {
+    background-color: var(--light-grey-color);
+    padding: 120px 0 80px 0; /* Adjusted padding to account for fixed header */
+    display: flex;
+    align-items: center;
+    min-height: 100vh; /* Adjust as needed for full viewport height */
+    margin-top: 60px; /* Space for fixed header */
+}
+
+.hero-section .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+    justify-content: center; /* Center items when wrapped */
+}
+
+.hero-section .hero-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.hero-section .hero-content h1 {
+    font-size: 3.2em;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.hero-section .hero-content p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.hero-section .hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.hero-section .hero-image {
+    flex: 1;
+    min-width: 400px; /* Ensure image section doesn't get too small */
+    text-align: center;
+}
+
+.hero-section .hero-image img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .hero-section .container {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center;
+    }
+    .hero-section .hero-content {
+        text-align: center;
+    }
+    .hero-section .hero-buttons {
+        justify-content: center;
+    }
+    .hero-section .hero-image {
+        min-width: unset; /* Remove min-width when stacked */
+        max-width: 80%; /* Limit image size when stacked */
+    }
+    .hero-section {
+        padding-top: 100px; /* Adjust top padding for stacked layout */
+        min-height: unset; /* Allow height to adjust to content */
+    }
+}
+@media (max-width: 480px) {
+    .hero-section .hero-content h1 {
+        font-size: 2.2em; /* Smaller font on very small screens */
+    }
+    .hero-section .hero-content p {
+        font-size: 1em;
+    }
+    .hero-section .hero-buttons {
+        flex-direction: column; /* Stack buttons vertically */
+    }
+}

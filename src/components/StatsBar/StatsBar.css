@@ -1,0 +1,48 @@
+/* src/components/StatsBar/StatsBar.css */
+.stats-bar {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.stats-bar .container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.stats-bar .stat-item {
+    flex: 1;
+    min-width: 200px; /* Ensure stat items don't get too small */
+    padding: 15px;
+}
+
+.stats-bar .stat-item h3 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+}
+
+.stats-bar .stat-item p {
+    font-size: 1.1em;
+    opacity: 0.9;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .stats-bar .stat-item {
+        min-width: 150px; /* Allow items to be slightly smaller */
+    }
+    .stats-bar .stat-item h3 {
+        font-size: 2em;
+    }
+    .stats-bar .stat-item p {
+        font-size: 1em;
+    }
+}
+@media (max-width: 480px) {
+    .stats-bar .stat-item {
+        flex-basis: 100%; /* Stack items vertically on very small screens */
+    }
+}

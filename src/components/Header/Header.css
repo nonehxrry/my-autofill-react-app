@@ -1,0 +1,79 @@
+/* src/components/Header/Header.css */
+.main-header {
+    background-color: var(--white-color);
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-header .logo {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.main-header .main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+}
+
+.main-header .main-nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-header .main-nav a:hover {
+    color: var(--primary-color);
+}
+
+.main-header .header-actions {
+    display: flex;
+    gap: 10px;
+}
+.main-header .header-actions .icon-button {
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+.main-header .header-actions .icon-button:hover {
+    color: var(--primary-color);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .main-header .main-nav {
+        display: none; /* Hide nav on smaller screens, could implement a hamburger menu later */
+    }
+    .main-header .header-actions {
+        margin-left: auto; /* Push actions to the right if nav is hidden */
+    }
+}
+@media (max-width: 480px) {
+    .main-header .header-actions {
+        gap: 5px;
+    }
+    .main-header .btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+}

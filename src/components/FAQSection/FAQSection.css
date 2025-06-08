@@ -1,0 +1,92 @@
+/* src/components/FAQSection/FAQSection.css */
+.faq-section {
+    padding: 90px 0;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.faq-section h2 {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 50px;
+}
+
+.faq-section .faq-items {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.faq-section .faq-item {
+    background-color: var(--light-grey-color);
+    border-radius: 12px;
+    margin-bottom: 20px;
+    overflow: hidden; /* Important for height transitions */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.faq-section .faq-question {
+    padding: 20px 30px;
+    font-size: 1.1em;
+    font-weight: 600;
+    color: var(--heading-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.faq-section .faq-item.active .faq-question {
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.faq-section .faq-question .toggle-icon {
+    font-size: 1.2em;
+    transition: transform 0.3s ease; /* For smooth + to - transition */
+}
+/* You might want a specific rotation for the icon here,
+   but FontAwesome icons generally handle + and - via their type */
+
+
+.faq-section .faq-answer {
+    /* max-height and padding will be controlled by inline style in React (see FAQSection.js) */
+    overflow: hidden;
+    transition: max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+    background-color: var(--white-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+/* Styles for content within the answer, since it's dangerouslySetInnerHTML */
+.faq-section .faq-answer p,
+.faq-section .faq-answer ol,
+.faq-section .faq-answer ul {
+    margin-bottom: 10px; /* Adjust spacing inside the answer */
+    padding: 0; /* Reset default list padding if needed */
+}
+.faq-section .faq-answer li {
+    margin-left: 20px;
+    margin-bottom: 5px;
+}
+.faq-section .faq-answer li:last-child {
+    margin-bottom: 0;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .faq-section h2 {
+        font-size: 2em;
+    }
+    .faq-section .faq-question {
+        padding: 15px 20px;
+        font-size: 1em;
+    }
+    .faq-section .faq-answer {
+        padding: 10px 20px 15px 20px !important; /* Force smaller padding on mobile */
+    }
+}

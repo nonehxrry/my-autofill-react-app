@@ -1,0 +1,99 @@
+/* src/components/JobBoardSection/JobBoardSection.css */
+.job-board-section {
+    padding: 90px 0;
+    background-color: var(--white-color);
+    text-align: center;
+}
+
+.job-board-section .job-board-header {
+    margin-bottom: 50px;
+}
+
+.job-board-section .job-board-header h2 {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.job-board-section .job-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.job-board-section .job-stats .stat-item h3 {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.job-board-section .job-stats .stat-item p {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.job-board-section .job-listings {
+    display: flex;
+    overflow-x: auto; /* Enables horizontal scrolling */
+    gap: 25px;
+    padding-bottom: 20px; /* Space for scrollbar */
+    -webkit-overflow-scrolling: touch; /* For smoother scrolling on iOS */
+    scroll-snap-type: x mandatory; /* Makes cards snap into place */
+    justify-content: flex-start; /* Align items to start */
+}
+
+.job-board-section .job-card {
+    background-color: var(--white-color);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 25px;
+    min-width: 280px; /* Minimum width for each card */
+    flex-shrink: 0; /* Prevent cards from shrinking */
+    text-align: left;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    scroll-snap-align: start; /* Align card to start when scrolling */
+}
+
+.job-board-section .job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.job-board-section .job-card .job-time {
+    font-size: 0.85em;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.job-board-section .job-card .job-company {
+    font-size: 1.2em;
+    color: var(--heading-color);
+    margin-bottom: 5px;
+}
+
+.job-board-section .job-card .job-title {
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .job-board-section .job-board-header h2 {
+        font-size: 2em;
+    }
+}
+@media (max-width: 480px) {
+    .job-board-section .job-stats {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .job-board-section .job-listings {
+        justify-content: flex-start; /* Ensure scroll works */
+    }
+}

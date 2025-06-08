@@ -1,0 +1,108 @@
+/* src/components/HowItWorksSection/HowItWorksSection.css */
+.how-it-works-section {
+    padding: 90px 0;
+    background-color: var(--light-grey-color);
+    text-align: center;
+}
+
+.how-it-works-section h2 {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 50px;
+}
+
+.how-it-works-section .steps-grid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.how-it-works-section .step-card {
+    background-color: var(--white-color);
+    padding: 30px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 250px;
+    max-width: 300px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    position: relative; /* For the arrow positioning */
+}
+.how-it-works-section .step-card .step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--primary-color);
+    color: var(--white-color);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 0 auto 20px auto;
+}
+
+.how-it-works-section .step-card h3 {
+    font-size: 1.2em;
+    color: var(--heading-color);
+    margin-bottom: 10px;
+}
+
+.how-it-works-section .step-card p {
+    font-size: 0.95em;
+    color: var(--text-color);
+}
+
+/* Arrow styling between steps */
+.how-it-works-section .step-card:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -45px; /* Adjust to connect to the next card */
+    width: 30px; /* Length of the connecting line */
+    height: 2px;
+    background-color: var(--primary-color);
+    transform: translateY(-50%);
+    z-index: 0;
+}
+.how-it-works-section .step-card:not(:last-child)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: -50px; /* Position to the right of the card for arrow head */
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid var(--primary-color); /* The arrow head */
+    z-index: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .how-it-works-section .step-card {
+        max-width: 45%; /* Two cards per row */
+    }
+    .how-it-works-section .steps-grid {
+        gap: 20px;
+    }
+    .how-it-works-section .step-card:not(:last-child)::after,
+    .how-it-works-section .step-card:not(:last-child)::before {
+        display: none; /* Hide horizontal arrows on smaller screens */
+    }
+    .how-it-works-section .step-card:not(:last-child) {
+        margin-bottom: 30px; /* Add vertical spacing when stacking */
+    }
+}
+
+@media (max-width: 768px) {
+    .how-it-works-section h2 {
+        font-size: 2em;
+    }
+    .how-it-works-section .step-card {
+        max-width: 100%; /* Stack all cards vertically */
+    }
+}

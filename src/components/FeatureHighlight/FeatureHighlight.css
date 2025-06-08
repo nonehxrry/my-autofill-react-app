@@ -1,0 +1,101 @@
+/* src/components/FeatureHighlight/FeatureHighlight.css */
+.feature-highlight {
+    padding: 90px 0;
+    background-color: var(--white-color); /* Default background */
+}
+
+/* This is the key for alternating backgrounds. Apply this where FeatureHighlight is rendered.
+   For simplicity here, we'll keep it within the component CSS for direct copy,
+   but a more robust solution might have a parent manage this or use props. */
+.feature-highlight:nth-of-type(2n) { /* Applies to even-numbered feature-highlight components */
+    background-color: var(--light-grey-color);
+}
+
+
+.feature-highlight .container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* This is the specific rule for reversing layout based on the 'reverseLayout' prop */
+.feature-highlight.feature-reverse-layout .container {
+    flex-direction: row-reverse;
+}
+
+.feature-highlight .feature-content {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.feature-highlight .feature-content h2 {
+    font-size: 2.5em;
+    color: var(--heading-color);
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+.feature-highlight .feature-content p {
+    font-size: 1.1em;
+    color: var(--text-color);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+.feature-highlight .feature-image {
+    flex: 1;
+    min-width: 400px;
+    text-align: center;
+    position: relative;
+}
+.feature-highlight .feature-image img {
+    max-width: 100%;
+    height: auto;
+}
+.feature-highlight .ats-logos {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+.feature-highlight .ats-logos img {
+    height: 35px; /* Adjust as needed */
+    width: auto;
+    filter: grayscale(100%);
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+.feature-highlight .ats-logos img:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .feature-highlight .container {
+        flex-direction: column; /* Stack content and image vertically */
+        text-align: center;
+    }
+    .feature-highlight.feature-reverse-layout .container {
+        flex-direction: column; /* Maintain column stack for reversed layout too */
+    }
+    .feature-highlight .feature-content {
+        text-align: center;
+    }
+    .feature-highlight .btn {
+        margin: 0 auto; /* Center button when text is centered */
+    }
+    .feature-highlight .feature-image {
+        min-width: unset;
+        max-width: 80%; /* Limit image size when stacked */
+    }
+}
+@media (max-width: 480px) {
+    .feature-highlight .feature-content h2 {
+        font-size: 2em;
+    }
+    .feature-highlight .feature-content p {
+        font-size: 1em;
+    }
+}
