@@ -1,12 +1,34 @@
-// src/components/Header/Header.js
-import React from 'react';
-import './Header.css'; // Import the specific CSS for this component
+// src/components/Header/Header.jsx
+import React, { useState, useEffect } from 'react'; // Import useState and useEffect
+import './Header.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 function Header() {
+  const [scrolled, setScrolled] = useState(false); // State to track scroll
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Check if the scroll position is beyond a certain threshold (e.g., 50px)
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    // Add event listener when component mounts
+    window.addEventListener('scroll', handleScroll);
+
+    // Clean up event listener when component unmounts
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []); // Empty dependency array means this effect runs once on mount and cleans up on unmount
+
   return (
-    <header className="main-header">
+    // Apply 'scrolled' class conditionally
+    <header className={`main-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container">
         <div className="logo">RezuWizard</div> {/* Or <img src="/images/your-logo.png" alt="Your Logo" /> */}
         <nav className="main-nav">
