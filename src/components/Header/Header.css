@@ -1,6 +1,6 @@
 /* src/components/Header/Header.css */
 .main-header {
-    background-color: var(--white-color);
+    background-color: var(--white-color); /* Full opacity initially */
     padding: 15px 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
     position: fixed;
@@ -8,7 +8,16 @@
     top: 0;
     left: 0;
     z-index: 1000;
+    transition: background-color 0.3s ease, backdrop-filter 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
 }
+
+/* Styles for when the header is scrolled */
+.main-header.scrolled {
+    background-color: rgba(255, 255, 255, 0.85); /* 85% opacity white */
+    backdrop-filter: blur(8px); /* Frosted glass effect */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow when scrolled */
+}
+
 
 .main-header .container {
     display: flex;
