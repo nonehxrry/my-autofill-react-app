@@ -1,12 +1,23 @@
-/* General Styles & Base */
+/* src/index.css */
+
+/*
+ * General Styles & Base:
+ * - Resets default browser margins and padding.
+ * - Sets a base font, line-height, and text color.
+ * - Ensures smooth scrolling for anchor links.
+ * - Prevents horizontal scroll from overflowing content.
+ * - Important: padding-top on body to offset the fixed header.
+*/
 body {
   font-family: 'Poppins', sans-serif; /* RezuWizard's clean sans-serif font */
   margin: 0;
-  padding: 0;
+  /* CORRECTED: Remove 'padding: 0;' and set specific padding-top */
+  padding-top: 0px; /* Adjust this value if your header's computed height is different. */
   line-height: 1.6; /* Good readability */
   color: #333; /* Dark gray for primary text */
   background-color: #f8f9fa; /* Very light gray background for the page */
   overflow-x: hidden; /* Prevent horizontal scroll from responsiveness */
+  scroll-behavior: smooth; /* For smooth scrolling to anchor links */
 }
 
 .container {
@@ -106,25 +117,31 @@ a:hover {
   text-align: center; /* This might be redundant but ensures text centering */
 }
 
-/* Header Section */
+/* Header Section (These styles belong in Header.css if it's a component) */
+/* Moving these to Header.css as per your structure:
 .main-header {
   background-color: #fff;
   padding: 15px 0;
   border-bottom: 1px solid #eee;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* Subtle shadow like RezuWizard */
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
 .main-header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+  flex-wrap: wrap;
 }
 
 .main-header .logo {
   font-size: 2em;
   font-weight: 700;
-  color: #4A76FF; /* RezuWizard's logo color */
+  color: #4A76FF;
 }
 
 .main-nav ul {
@@ -139,7 +156,7 @@ a:hover {
 }
 
 .main-nav ul li:last-child {
-  margin-right: 0; /* No margin on the last item */
+  margin-right: 0;
 }
 
 .main-nav ul li a {
@@ -150,7 +167,7 @@ a:hover {
 }
 
 .main-nav ul li a:hover,
-.main-nav ul li a.active { /* Add .active class for current page */
+.main-nav ul li a.active {
   color: #4A76FF;
 }
 
@@ -158,11 +175,12 @@ a:hover {
   display: flex;
   align-items: center;
 }
+*/
 
 /* Hero Section */
 .hero-section {
   background-color: #fff;
-  padding: 100px 0; /* More padding for hero */
+  padding: 100px 0; /* Only internal padding for this section. No padding-top for header offset here. */
   text-align: left;
 }
 
@@ -725,40 +743,40 @@ a:hover {
 
   .hero-section .container,
   .feature-highlight .container {
-      flex-direction: column; /* Stack content vertically */
-      text-align: center;
-      gap: 40px;
+    flex-direction: column; /* Stack content vertically */
+    text-align: center;
+    gap: 40px;
   }
 
   .feature-highlight:nth-of-type(even) .container {
-      flex-direction: column; /* Keep column direction for alternating sections too */
+    flex-direction: column; /* Keep column direction for alternating sections too */
   }
 
   .hero-buttons .btn {
-      margin-right: 10px;
-      margin-bottom: 10px;
+    margin-right: 10px;
+    margin-bottom: 10px;
   }
 
   .hero-content, .feature-content, .feature-image {
-      max-width: 100%; /* Take full width */
-      min-width: unset; /* Remove min-width constraints */
+    max-width: 100%; /* Take full width */
+    min-width: unset; /* Remove min-width constraints */
   }
 
   .job-card {
-      width: calc(50% - 25px); /* Two cards per row */
+    width: calc(50% - 25px); /* Two cards per row */
   }
 
   .testimonials-grid, .steps-grid {
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
-      gap: 25px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Adjust grid for smaller screens */
+    gap: 25px;
   }
 
   .testimonial-header-box {
-      padding: 40px;
+    padding: 40px;
   }
 
   .faq-item {
-      margin: 0 10px 15px; /* Add some side margin */
+    margin: 0 10px 15px; /* Add some side margin */
   }
 }
 
@@ -770,54 +788,54 @@ a:hover {
   p { font-size: 0.95em; }
 
   .hero-section, .feature-highlight, .job-board-section, .testimonial-section, .how-it-works-autofill, .faq-section {
-      padding: 60px 0; /* Reduce section padding */
+    padding: 60px 0; /* Reduce section padding */
   }
 
   .main-header .container {
-      flex-direction: column; /* Stack header items vertically */
-      gap: 15px;
+    flex-direction: column; /* Stack header items vertically */
+    gap: 15px;
   }
   .header-actions {
-      margin-left: 0; /* Center actions */
-      justify-content: center;
-      width: 100%;
+    margin-left: 0; /* Center actions */
+    justify-content: center;
+    width: 100%;
   }
 
   .stats-bar .container, .job-stats {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
 
   .job-card {
-      width: calc(100% - 25px); /* One card per row */
+    width: calc(100% - 25px); /* One card per row */
   }
 
   .testimonial-card, .step-card {
-      min-height: unset; /* Allow height to adjust */
+    min-height: unset; /* Allow height to adjust */
   }
 
   .testimonial-header-box h2 {
-      font-size: 2.5em;
+    font-size: 2.5em;
   }
 
   .step-number {
-      width: 50px;
-      height: 50px;
-      font-size: 1.5em;
-      top: -25px;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5em;
+    top: -25px;
   }
 
   .faq-question {
-      padding: 18px 25px;
-      font-size: 1em;
+    padding: 18px 25px;
+    font-size: 1em;
   }
   .faq-answer {
-      padding: 10px 25px 20px 25px;
+    padding: 10px 25px 20px 25px;
   }
 
   .footer-links ul {
-      flex-direction: column;
-      gap: 15px;
+    flex-direction: column;
+    gap: 15px;
   }
 }
 
@@ -829,17 +847,17 @@ a:hover {
   .main-header .logo { font-size: 1.6em; }
 
   .hero-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
   .hero-buttons .btn {
-      margin-right: 0;
-      width: 80%; /* Make buttons wider on very small screens */
+    margin-right: 0;
+    width: 80%; /* Make buttons wider on very small screens */
   }
   .stats-bar .stat-item h3 { font-size: 2em; }
 
   .testimonial-header-box h2 {
-      font-size: 2em;
+    font-size: 2em;
   }
 }
