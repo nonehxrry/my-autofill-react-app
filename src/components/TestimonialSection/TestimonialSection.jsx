@@ -7,28 +7,40 @@ import { faHeart } from '@fortawesome/free-solid-svg-icons'; // Example solid ic
 function TestimonialSection() {
   const testimonials = [
     {
-      quote: "omg i cannot believe i am getting a interview after using this. the recommendations is well thought off. highly recommend everyone to use this website.",
-      userImage: "/images/user-michelle.png",
-      userName: "Michelle V.",
+      quote: "This auto-fill feature has saved me hours! Instead of typing the same information repeatedly, I can now apply to multiple jobs in just a few clicks. Absolute game-changer!",
+      userImage: "/images/user-priyansh.png",
+      userName: "Priyansh Sehgal",
       userTitle: "Sr. Digital Marketing Manager"
     },
     {
-      quote: "Jobright has become my go-to for job hunting! I don't waste my time applying to the wrong jobs or companies.",
-      userImage: "/images/user-likitha.png",
-      userName: "Likitha U.",
+      quote: "Applying for jobs used to be so tedious. This tool made the process smooth and efficient. It feels amazing to apply without the usual hassle.",
+      userImage: "/images/user-asis.png",
+      userName: "Asis Singh",
       userTitle: "Software Engineer"
     },
     {
-      quote: "Discovering Jobright has been a revelation! It's completely free with no hidden costs. The AI makes the job search more tailored to my needs. It's a breath of fresh air in this crazy job market!",
+      quote: "The way it fills out every field with such accuracy is incredible. It even remembers the small details that I often forget. Impressive automation!",
       userImage: "/images/user-uma.png",
-      userName: "Uma M.",
+      userName: "Sunchita Singh",
       userTitle: "Full stack Developer"
     },
     {
       quote: "Thanks to this platform I've landed a few interviews and accepted an offer within 1 week of interviewing!! It helped me cut through the noise in the job search on LinkedIn and the AI helped me learn why I'm a good fit for each role.",
       userImage: "/images/user-tracy.png",
-      userName: "Tracy C.",
+      userName: "Akshita Gupta.",
       userTitle: "Senior Digital Marketing Consultant"
+    }, // <-- Make sure this comma is there!
+    {
+      quote: "The interface is super intuitive. I didn't have to watch a tutorial or read long guides. It just works and works well!",
+      userImage: "/images/user-sivansh.png",
+      userName: "Shivansh Singh",
+      userTitle: "App Developer"
+    }, // <-- And this comma is crucial!
+    {
+      quote: "Because I could apply to more jobs faster, I received more interview calls. This feature definitely gave my job hunt a boost!",
+      userImage: "/images/user-yatharth.png",
+      userName: "Yatharth Gupta.",
+      userTitle: "Cloud Engineer"
     }
   ];
 
@@ -36,7 +48,7 @@ function TestimonialSection() {
     <section className="testimonial-section">
       <div className="container">
         <div className="testimonial-header">
-          <h2>SEE WHAT USERS SAY ABOUT JOBRIGHT'S AI AUTOFILL</h2>
+          <h2>SEE WHAT USERS SAY ABOUT REZUWIZARD'S AI AUTOFILL</h2>
           <div className="heart-icon">
             <FontAwesomeIcon icon={faHeart} />
           </div>
