@@ -12,7 +12,7 @@ This is a React application built with Vite. It serves as a foundational project
 * **Fast Development:** Utilizes Vite for a quick development experience.
 * **Interactive Elements:** Includes examples of dynamic UI components.
 
-## Technologies Used
+## Technologies Used 
 
 * React.js
 * Vite
